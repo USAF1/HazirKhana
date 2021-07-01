@@ -77,5 +77,12 @@ namespace HazirKhanaWEB.Controllers
             ViewData["Restaurants"] = restaurant;
             return View();
         }
+
+        public IActionResult AdminSingleRestaurant(int id)
+        {
+            RestaurantModel restaurant = RestaurantHandler.GetRestaurant(id).ToRestaurantModel();
+
+            return View();
+        }
     }
 }

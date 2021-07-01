@@ -1,0 +1,701 @@
+﻿
+@{
+    ViewData["Title"] = "AdminSingleRestaurant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container bg-white">
+    <div class="row">
+        <div class="" style="padding:0px !important;">
+            <img src="/images/cover.jpg" style="width: 100%; height:400px;" alt="">
+            <img src="/images/profile.jpg" alt="" class="restaurantProfileImage" srcset="">
+        </div>
+    </div>
+    <div class="row">
+        <h1 class="mt-5 p-4 bg-white">Restaurants Info</h1><hr style="margin-top: -5px;">
+        <div class="col-md-6">
+
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Name: </label> <p class="p-2">KFC Hotel</p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Email: </label> <p class="p-2">atif.0002@gmail.com</p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Address: </label> <p class="p-2">the quick brown fox jumps over the lazy dog. </p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Postal Code: </label> <p class="p-2"> 2500</p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Order Led Time: </label> <p class="p-2">30 mins </p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Discription: </label> <p class="p-2">the quick brown fox jumps over the lazy dog.the quick brown fox jumps over the lazy dog.the quick brown fox jumps over the lazy dog.</p>
+            </div>
+            <div class="d-flex">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Cusins: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Mob: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Tell: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">City: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Province: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Sales Tex: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Reservation: </label> <p class="p-2">Abc, def, ijk </p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <h1 class="mt-3 p-4 text-white fw-bold " style="background-color: #413C58; display: flexbox ;">Working Hours</h1>
+        <table class="mt-5 p-5 mx-5 responsiveTable" style="width: 100%; line-height: 2.5;">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th style="color:lightgreen;">Open</th>
+                    <th style="color:red;">Close</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>09:00 am</td>
+                    <td>12:00 pm</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row mx-2">
+        <h1 class="mt-3 p-4 text-white fw-bold " style="background-color: #413C58; display: flexbox ;">Order Details <sub style="font-weight: 400; font-size: 16px;">(Filter by Month)  </sub> </h1>
+        <p class="mt-1 p-4"> Select Month</p>
+        <div class=" datePicker mx-4 d-flex p-3" style="width: 250px;">
+            <img src="/images/calendar (1).png" class="navIconImage" alt="">
+            <p class="dateBackground" style="margin-bottom: -30px;"> Filter Periode <br> <input type="date" class="form-control dateInput" style="background-color: #E7EFC5; border:  none; margin-left: -10px;" name="" id=""></p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
+                <h2 class="mt-4">Total </h2>
+                <img src="/images/image1.png" class="cardIconImage" alt="" srcset="">
+
+                <h2>20</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
+                <h2 class="mt-4">Total </h2>
+                <img src="/images/image 2.png" class="cardIconImage" alt="" srcset="">
+
+                <h2>20</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
+                <h2 class="mt-4">Total </h2>
+                <img src="/images/image3.png" class="cardIconImage" alt="" srcset="">
+
+                <h2>20</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mt-5">
+                <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
+                    <h2 class="mt-4">Completed </h2>
+                    <img src="/images/image4.png" class="cardIconImage" alt="" srcset="">
+
+                    <h2>20</h2>
+                </div>
+            </div>
+            <div class="col-md-4 mt-5">
+                <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
+                    <h2 class="mt-4">Cancelled</h2>
+                    <img src="/images/image 5.png" class="cardIconImage" alt="" srcset="">
+
+                    <h2>20</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row mt-5 ">
+        <ul class="nav multipleTables" role="tablist">
+            <li class="nav-item nav-tabs btn">
+                <a href="#collapseOrder" class="tab-item" role="tab" data-toggle="tab">
+                    Orders
+                </a>
+            </li>
+            <li class="nav-item nav-tabs btn">
+                <a href="#collapseProduct" class="tab-item" role="tab" data-toggle="tab">
+                    Products
+                </a>
+            </li>
+            <li class="nav-item nav-tabs btn">
+                <a href="#collapseCusines" class="tab-item" role="tab" data-toggle="tab">
+                    Cusions
+                </a>
+            </li>
+            <li class="nav-item nav-tabs btn">
+                <a href="#collapseOption" class="tab-item" role="tab" data-toggle="tab">
+                    Option
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <!--******************CollapseOrders*******************************-->
+            <div class="active tab-pane" role="tabpanel" id="collapseOrder">
+                <div class="card card-body">
+
+                    <div class="bg-white  restaurantTable p-3">
+                        <table class="mt-3  responsiveTableOrder " style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th class="p-2"> Id #</th>
+                                    <th>Customer</th>
+                                    <th>Total BIll</th>
+                                    <th>Address</th>
+                                    <th>Status</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye btn fa-2x"></i></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex mt-5 mx-5 justify-content-end">
+                            <p class="mx-5 btn fw-bold">Previous</p>
+                            <p class="mx-5 btn fw-bold">Next</p>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!--****************CollapseProduct******************************************-->
+            <div class="tab-pane" role="tabpanel" id="collapseProduct">
+                <div class="card card-body">
+
+                    <div class="bg-white restaurantTable p-3">
+                        <table class="mt-3 responsiveTable " style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th class="p-2"> Id #</th>
+                                    <th>Name</th>
+                                    <th> Price</th>
+                                    <th>Cusines</th>
+                                    <th>Status</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td>555$</td>
+                                    <td>Peshawr Pakistan Universe</td>
+                                    <td>Pending</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex mt-5 mx-5 justify-content-end">
+                            <p class="mx-5 btn fw-bold">Previous</p>
+                            <p class="mx-5 btn fw-bold">Next</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--************************CollapseCusions******************-->
+            <div class="tab-pane" role="tabpanel" id="collapseCusines">
+                <div class="card card-body">
+
+                    <div class="bg-white restaurantTable p-3">
+                        <table class="mt-3 responsiveTable " style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th class="p-2"> Id #</th>
+                                    <th>Name</th>
+                                    <th>Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">55 </td>
+                                    <td>Smith</td>
+                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+
+                        <div class="d-flex mt-5 mx-5 justify-content-end">
+                            <p class="mx-5 btn fw-bold">Previous</p>
+                            <p class="mx-5 btn fw-bold">Next</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="collapseOption">
+                <div class="card card-body">
+                    <form action="">
+
+                        <div class="row mt-2 p-2">
+                            <div class="col-md-6">
+                                <label for="name">Name *</label>
+                                <input type="text" name="" id="" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Restaurant Name"><br>
+                                <label for="name">Email *</label>
+                                <input type="email" name="" id="" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Email">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name">Contact Mob *</label>
+                                <input type="number" name="" id="" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Contact"><br>
+                                <label for="name">Contact Tel *</label>
+                                <input type="number" name="" id="" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Telephone">
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <label for="address"> Address *</label><br>
+                            <textarea name="" id="" cols="10" style="resize: none; background-color: #FCFBFB; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Address" rows="3"></textarea>
+                            <div class="col-md-6 mt-3">
+                                <label for="name">Province *</label>
+                                <select name="" style="background-color: #FCFBFB;" class="form-select w-50 mt-2 p-2" id="">
+                                    <option value="">Select Province</option>
+                                    <option value="kpk">KPK</option>
+                                    <option value="sindh">Sindh</option>
+                                </select>
+                                <label class="mt-4" for="name">Postal Code *</label>
+                                <input type="email" name="" id="" class="form-control mt-2 w-50 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Postal Code">
+
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <label for="name">City *</label>
+                                <select name="" style="background-color: #FCFBFB;" class="form-select w-50 mt-2 p-2" id="">
+                                    <option value="">Select City</option>
+                                    <option value="peshawar">Peshawar</option>
+                                    <option value="Charsada">Charsda</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <label for="address"> Description *</label><br>
+                            <textarea name="" id="" cols="10" style="resize: none; background-color: #FCFBFB; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Description" rows="3"></textarea>
+                            <label for="" class="mt-4">Select Cusiones</label>
+
+                            <div class="form-check form-check-inline mx-4 mt-2">
+                                <input class="form-check-input" type="checkbox" id="" value="Chines">
+                                <label class="form-check-label" for="Chines">Chines</label>
+
+                                <div class="form-check form-check-inline mx-3 ">
+                                    <input class="form-check-input  " type="checkbox" id="" value="Italian">
+                                    <label class="form-check-label" for="Italian">Italian</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-3 ">
+                                    <input class="form-check-input" type="checkbox" id="" value="Russian">
+                                    <label class="form-check-label" for="Russian">Russian</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-3">
+                                    <input class="form-check-input " type="checkbox" id="" value="Desi">
+                                    <label class="form-check-label" for="Desi">Desi</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-3">
+                                    <input class="form-check-input" type="checkbox" id="" value="Junk Food">
+                                    <label class="form-check-label" for="Junk">Junk Food</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-3">
+                                    <input class="form-check-input" type="checkbox" id="" value="Arabian">
+                                    <label class="form-check-label" for="Arabian">Arabian</label>
+                                </div>
+                                <div class="form-check form-check-inline mx-3">
+                                    <input class="form-check-input " type="checkbox" id="" value="Sweet">
+                                    <label class="form-check-label" for="Sweet">Sweet</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label for="name">Sales Tax *</label>
+                                <input type="number" name="" id="" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Sales Tax"><br>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <label for="name">Order Load Time  *</label>
+                                <input type="number" name="" id="" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Order Load Time in Minutes"><br>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <label for="" class="mt-3">Reservation *</label>
+                            <div class="form-check mx-3">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Yes">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check mx-3">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="No" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+
+                        <br><br>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
