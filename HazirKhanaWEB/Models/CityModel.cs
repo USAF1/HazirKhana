@@ -13,5 +13,7 @@ namespace HazirKhanaWEB.Models
         public string Name { get; set; }
 
         public int PostalCode { get; set; }
+
+        public ProvienceModel Provience { get; set; }
     }
 }

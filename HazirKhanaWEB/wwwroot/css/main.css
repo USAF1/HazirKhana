@@ -80,7 +80,7 @@ body {
 
     .iconDiv:hover {
         border: 3px solid orange;
-        position: absolute;
+        /* position: absolute; */
         animation: pulse;
         animation-duration: 2s;
     }
@@ -111,40 +111,85 @@ body {
     border-bottom: none;
 }
 
-.nustedList {
+.dropbtn {
+    /* background-color: #04AA6D; */
+    /* color: white; */
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+
+.dropdown {
+    /* position: relative; */
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    /* position: absolute; */
+    /* background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+    z-index: 1;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #E7EFC5;
+    border-radius: 20px;
+}
+
+.nustedList a:hover {
+    color: orange;
+}
+
+
+/* .nustedList{
     display: none;
     line-height: 2;
     list-style: none;
 }
+.nustedList li a{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
 
-    .nustedList li a {
-        font-weight: 600;
-        text-decoration: none;
-        color: black;
-        margin-left: 20px;
-    }
-
-        .nustedList li a:hover {
-            color: orange;
-        }
-
-.nustedList1 {
+.nustedList1{
     display: none;
     line-height: 2;
     list-style: none;
 }
-
-    .nustedList1 li a {
-        font-weight: 600;
-        text-decoration: none;
-        color: black;
-        margin-left: 20px;
-    }
-
-        .nustedList1 li a:hover {
-            color: orange;
-        }
-
+.nustedList1 li a{
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    margin-left: 20px;
+}
+.nustedList1 li a:hover{
+    color: orange;
+} */
 .statusBtn {
     background-color: #E7EFC5;
     outline: none;
@@ -243,5 +288,27 @@ body {
     background-color: #413C58;
     color: white;
     border-radius: 10px;
-    padding: 10px 25px;
+    padding: 10px 30px;
 }
+
+.restaurantDetailBtn {
+    background-color: lightskyblue;
+    color: white;
+    outline: none !important;
+    border: none;
+    padding: 10px;
+}
+
+
+
+
+.restaurantListCard {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+    .restaurantListCard:hover {
+        border: 3px solid orange;
+        animation: pulse;
+        animation-duration: 2s;
+    }

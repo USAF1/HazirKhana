@@ -58,16 +58,16 @@
     <!--**************************Section1**************************-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-2 ">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <button class="btn navBtn"><i class=""><img src="~/icons/home.png" class="navIconImage" alt=""></i> Dashboard</button>
+                        <button class="btn navBtn"><i class=""><img src="~/icons/home.png" class="navIconImage" alt=""></i>Dashboard</button>
 
                     </li>
                     <li class="nav-item">
                         <button class="btn navBtn nusted" type="button"><i class=""><img src="~/icons/restaurant.png" class="navIconImage" alt=""></i>Resutrants</button>
                         <ul class="nustedList">
-                            <li><a href="#"> List</a></li>
+                            <li><a asp-action="AdminRestaurantsList" asp-controller="Restaurant"> List</a></li>
                             <li><a asp-action="AdminRestaurantAdd" asp-controller="Restaurant">Add New</a> </li>
                         </ul>
                     </li>
@@ -147,13 +147,14 @@
 
     <!-- Optional JavaScript; choose one of the two! -->
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
     <script src="~/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/font-awesome/js/fontawesome.min.js"></script>
     <script src="~/jquery/dist/jquery.min.js"></script>
     <script src="~/js/main.js"></script>
 
-
+    @RenderSection("alert", false)
 </body>
 </html>

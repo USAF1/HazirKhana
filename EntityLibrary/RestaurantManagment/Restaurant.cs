@@ -56,7 +56,7 @@ namespace EntityLibrary.RestaurantManagment
         public int PercentageCutOff { get; set; }
 
         [Required]
-        public bool Reservation { get; set; }
+        public string Reservation { get; set; }
 
         [Required]
         [Column(TypeName = "image")]

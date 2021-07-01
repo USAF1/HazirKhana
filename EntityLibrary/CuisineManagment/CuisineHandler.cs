@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace EntityLibrary.CuisineManagment
 {
-    public class CuisineHandler
+    public static class CuisineHandler
     {
 
-        public static void AddCusine(Cuisine entity)
+        public static void AddCusine( this Cuisine entity)
         {
 
             using (ApplictionDb  context = new ApplictionDb())
@@ -26,6 +26,14 @@ namespace EntityLibrary.CuisineManagment
             using (ApplictionDb context = new ApplictionDb())
             {
                 return context.Cuisines.Include(x=>x.ParentCuisine).ToList();
+            }
+        }
+
+        public static Cuisine GetCuisine(int id)
+        {
+            using (ApplictionDb context = new ApplictionDb())
+            {
+                return (from Cuisine in context.Cuisines where Cuisine.Id == id select Cuisine).FirstOrDefault();
             }
         }
 

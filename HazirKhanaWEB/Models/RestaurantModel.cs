@@ -37,7 +37,7 @@ namespace HazirKhanaWEB.Models
 
         public int PercentageCutOff { get; set; }
 
-        public bool Reservation { get; set; }
+        public string Reservation { get; set; }
 
         public string Logo { get; set; }
 
