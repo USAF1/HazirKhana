@@ -42,6 +42,8 @@ namespace HazirKhanaWEB.Models
         public string Logo { get; set; }
 
         public string Banner { get; set; }
+
+
     }
 }
 

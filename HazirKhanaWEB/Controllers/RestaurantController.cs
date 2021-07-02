@@ -82,6 +82,8 @@ namespace HazirKhanaWEB.Controllers
         {
             RestaurantModel restaurant = RestaurantHandler.GetRestaurant(id).ToRestaurantModel();
 
+            ViewData["Restaurant"] = restaurant;
+
             return View();
         }
     }

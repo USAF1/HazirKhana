@@ -1,14 +1,24 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "AdminSingleRestaurant";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    RestaurantModel restaurant = (RestaurantModel)ViewData["Restaurant"];
 }
+
+<partial name="~/views/Partials/_adminAnalytics.cshtml" />
+
 
 <div class="container bg-white">
     <div class="row">
         <div class="" style="padding:0px !important;">
-            <img src="/images/cover.jpg" style="width: 100%; height:400px;" alt="">
-            <img src="/images/profile.jpg" alt="" class="restaurantProfileImage" srcset="">
+            @if (restaurant.Banner != null)
+            {
+                <img src="data:image/jpg;base64,@restaurant.Banner" style="width: 100%; height:400px;">
+            }
+            @if (restaurant.Logo != null)
+            {
+                <img src="data:image/jpg;base64,@restaurant.Logo" class="restaurantProfileImage">
+            }
+
         </div>
     </div>
     <div class="row">
@@ -16,22 +26,22 @@
         <div class="col-md-6">
 
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Name: </label> <p class="p-2">KFC Hotel</p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Name: </label> <p class="p-2">@restaurant.Name</p>
             </div>
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Email: </label> <p class="p-2">atif.0002@gmail.com</p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Email: </label> <p class="p-2">@restaurant.Email</p>
             </div>
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Address: </label> <p class="p-2">the quick brown fox jumps over the lazy dog. </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Address: </label> <p class="p-2">@restaurant.Address </p>
             </div>
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Postal Code: </label> <p class="p-2"> 2500</p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Postal Code: </label> <p class="p-2"> @restaurant.PostalCode</p>
             </div>
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Order Led Time: </label> <p class="p-2">30 mins </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Order Led Time: </label> <p class="p-2">@restaurant.OrderLedTime </p>
             </div>
             <div class="d-flex">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Discription: </label> <p class="p-2">the quick brown fox jumps over the lazy dog.the quick brown fox jumps over the lazy dog.the quick brown fox jumps over the lazy dog.</p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Discription: </label> <p class="p-2">@restaurant.Discription</p>
             </div>
             <div class="d-flex">
                 <label for="name" class="p-2" style="color:#852100; font-weight:600;">Cusins: </label> <p class="p-2">Abc, def, ijk </p>
@@ -40,24 +50,27 @@
         </div>
         <div class="col-md-6">
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Mob: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Mob: </label> <p class="p-2">@restaurant.ContactMob </p>
             </div>
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Tell: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Contact Tell: </label> <p class="p-2">@restaurant.ConatctTel </p>
             </div>
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">City: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">City: </label> <p class="p-2">@restaurant.City.Name </p>
             </div>
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Province: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Province: </label> <p class="p-2">@restaurant.Provience.Name </p>
             </div>
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Sales Tex: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Sales Tex: </label> <p class="p-2">@restaurant.SalesTax </p>
             </div>
             <div class="d-flex mx-2">
-                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Reservation: </label> <p class="p-2">Abc, def, ijk </p>
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Reservation: </label> <p class="p-2">@restaurant.Reservation </p>
             </div>
 
+            <div class="d-flex mx-2">
+                <label for="name" class="p-2" style="color:#852100; font-weight:600;">Percentage Cut Off: </label> <p class="p-2">@restaurant.PercentageCutOff </p>
+            </div>
         </div>
 
     </div>
@@ -123,7 +136,7 @@
     <div class="row">
         <div class="col-md-4">
             <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
-                <h2 class="mt-4">Total </h2>
+                <h2 class="mt-4">Total Orders</h2>
                 <img src="/images/image1.png" class="cardIconImage" alt="" srcset="">
 
                 <h2>20</h2>
@@ -131,7 +144,7 @@
         </div>
         <div class="col-md-4">
             <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
-                <h2 class="mt-4">Total </h2>
+                <h2 class="mt-4">Total Income</h2>
                 <img src="/images/image 2.png" class="cardIconImage" alt="" srcset="">
 
                 <h2>20</h2>
@@ -139,7 +152,7 @@
         </div>
         <div class="col-md-4">
             <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
-                <h2 class="mt-4">Total </h2>
+                <h2 class="mt-4">Total Profit</h2>
                 <img src="/images/image3.png" class="cardIconImage" alt="" srcset="">
 
                 <h2>20</h2>
@@ -148,7 +161,7 @@
         <div class="row">
             <div class="col-md-4 mt-5">
                 <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
-                    <h2 class="mt-4">Completed </h2>
+                    <h2 class="mt-4">Completed Orders</h2>
                     <img src="/images/image4.png" class="cardIconImage" alt="" srcset="">
 
                     <h2>20</h2>
@@ -156,7 +169,7 @@
             </div>
             <div class="col-md-4 mt-5">
                 <div class="iconDiv card-body" style="width: 270px; border-radius: 10px; background-color: #FAFAFA;">
-                    <h2 class="mt-4">Cancelled</h2>
+                    <h2 class="mt-4">Cancelled Orders</h2>
                     <img src="/images/image 5.png" class="cardIconImage" alt="" srcset="">
 
                     <h2>20</h2>
@@ -699,3 +712,10 @@
 <br>
 <br>
 
+@section alert{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+}

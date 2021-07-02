@@ -10,8 +10,13 @@
 
     string[] op = new[] { "Yes", "No" };
 }
-<div class="container bg-white">
+
+
+<partial name="~/views/Partials/_adminAnalytics.cshtml" />
+
+<div class="container restaurantTable bg-white">
     <div class="row">
+
         <form asp-action="AdminRestaurantAdd" asp-controller="Restaurant" enctype="multipart/form-data">
             <h1 class="mt-4 p-3">Add Restaurant</h1>
             <p class="mx-3">Please Fill The Required Form </p> <hr>
@@ -136,14 +141,15 @@
         </form>
     </div>
 </div>
+<br /><br />
 
 @section alert{
 
 
-<script>
+    <script>
 
-    $('#ss').alert();
-</script>
+        $('#ss').alert();
+    </script>
 
- }
+}
 

@@ -61,7 +61,7 @@ namespace EntityLibrary.RestaurantManagment
         {
             using (ApplictionDb context = new ApplictionDb())
             {
-                return (from Restaurant in context.Restaurants where Restaurant.Id == id select Restaurant).FirstOrDefault();
+                return (from Restaurant in context.Restaurants where Restaurant.Id == id select Restaurant).Include(x=>x.Provience).Include(y=>y.City) .FirstOrDefault();
             }
         }
 
