@@ -29,7 +29,7 @@ namespace EntityLibrary.RestaurantManagment
         public string Email { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(100)")]
+        [Column(TypeName = "varchar(max)")]
         public string Address { get; set; }
 
         public Provience Provience { get; set; }
@@ -39,7 +39,7 @@ namespace EntityLibrary.RestaurantManagment
         public int PostalCode { get; set; }
 
         [Required]
-        [Column(TypeName = "varchar(100)")]
+        [Column(TypeName = "varchar(max)")]
         public string Discription { get; set; }
 
         public List<Cuisine> Cuisines { get; set; }

@@ -4,14 +4,16 @@ using EntityLibrary;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntityLibrary.Migrations
 {
     [DbContext(typeof(ApplictionDb))]
-    partial class ApplictionDbModelSnapshot : ModelSnapshot
+    [Migration("20210702064334_InitalCatalogRestaurant1.4")]
+    partial class InitalCatalogRestaurant14
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
