@@ -55,9 +55,24 @@ namespace HazirKhanaWEB.Controllers
 
             model.Provience = LocationHandler.GetProvience(model.Provience.Id).ToProvienceModel();
 
-
-
             Restaurant restaurant = model.ToRestaurantEntity();
+
+            //foreach (var cuisine in model.Cuisines)
+            //{
+            //    if (cuisine.IsChecked == false)
+            //    {
+            //        restaurant.Cuisines.
+            //        restaurant.Cuisines.Remove(cuisine.ToCuisineEntity());
+            //    }
+            //}
+
+            for (int i = 0; i < model.Cuisines.Count; i++)
+            {
+                if (model.Cuisines[i].IsChecked == false)
+                {
+                    restaurant.Cuisines.RemoveAt(i);
+                }
+            }
 
             IFormFile logo = Request.Form.Files["logo"];
             IFormFile banner = Request.Form.Files["banner"];

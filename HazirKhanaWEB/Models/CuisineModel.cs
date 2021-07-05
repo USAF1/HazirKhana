@@ -15,6 +15,8 @@ namespace HazirKhanaWEB.Models
 
         public string Image { get; set; }
 
+        public bool IsChecked { get; set; }
+
         public CuisineModel ParentCuisine { get; set; }
     }
 }
