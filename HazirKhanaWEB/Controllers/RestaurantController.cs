@@ -57,15 +57,6 @@ namespace HazirKhanaWEB.Controllers
 
             Restaurant restaurant = model.ToRestaurantEntity();
 
-            //foreach (var cuisine in model.Cuisines)
-            //{
-            //    if (cuisine.IsChecked == false)
-            //    {
-            //        restaurant.Cuisines.
-            //        restaurant.Cuisines.Remove(cuisine.ToCuisineEntity());
-            //    }
-            //}
-
             for (int i = 0; i < model.Cuisines.Count; i++)
             {
                 if (model.Cuisines[i].IsChecked == false)
@@ -93,13 +84,78 @@ namespace HazirKhanaWEB.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult AdminSingleRestaurant(int id)
         {
             RestaurantModel restaurant = RestaurantHandler.GetRestaurant(id).ToRestaurantModel();
 
+            List<CuisineModel> cuisines = CuisineHandler.GetCuisines().ToCuisineModelList();
+            List<SelectListItem> cities = LocationHandler.GetCities().ToCitySelectListItem();
+
+            List<SelectListItem> proviences = LocationHandler.GetProviences().ToProvienceSelectListItem();
+
+            ViewData["Cities"] = cities;
+            ViewData["Proviences"] = proviences;
+
+            for (int i = 0; i < cuisines.Count; i++)
+            {
+                foreach (var item in restaurant.Cuisines)
+                {
+                    if (item.Id == cuisines[i].Id)
+                    {
+                        cuisines[i].IsChecked = true;
+                    }
+                }
+            }
+
+
+
             ViewData["Restaurant"] = restaurant;
+            ViewData["Cuisines"] = cuisines;
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AdminRestaurantUpdate(RestaurantModel model)
+        {
+            if (model.City != null)
+            {
+                model.City = LocationHandler.GetCity(model.City.Id).ToCityModel();
+            }
+            if (model.Provience != null)
+            {
+                model.Provience = LocationHandler.GetProvience(model.Provience.Id).ToProvienceModel();
+            }
+
+
+            Restaurant restaurant = model.ToRestaurantEntity();
+
+            for (int i = 0; i < model.Cuisines.Count; i++)
+            {
+                if (model.Cuisines[i].IsChecked == false)
+                {
+                    restaurant.Cuisines.RemoveAt(i);
+                }
+            }
+
+            RestaurantModel restaurantModel = RestaurantHandler.GetRestaurant(model.Id).ToRestaurantModel();
+
+
+            if (model.Logo != null)
+            {
+                IFormFile logo = Request.Form.Files["logo"];
+                restaurant.Logo = logo.FromStringToByteArray();
+            }
+            if (model.Banner != null)
+            {
+                IFormFile banner = Request.Form.Files["banner"];
+                restaurant.Banner = banner.FromStringToByteArray();
+            }
+
+            RestaurantHandler.RestaurantAdminUpdate(restaurant);
+
+            return RedirectToAction("AdminRestaurantList");
         }
     }
 }

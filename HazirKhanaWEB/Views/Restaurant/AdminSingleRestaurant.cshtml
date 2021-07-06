@@ -1,7 +1,12 @@
-﻿@{
+﻿@model RestaurantModel;
+@{
     ViewData["Title"] = "AdminSingleRestaurant";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     RestaurantModel restaurant = (RestaurantModel)ViewData["Restaurant"];
+    List<CuisineModel> cuisines = (List<CuisineModel>)ViewData["Cuisines"];
+    List<SelectListItem> cities = (List<SelectListItem>)ViewData["Cities"];
+    List<SelectListItem> proviences = (List<SelectListItem>)ViewData["Proviences"];
+    string[] op = new[] { "Yes", "No" };
 }
 
 <partial name="~/views/Partials/_adminAnalytics.cshtml" />
@@ -192,7 +197,7 @@
             </li>
             <li class="nav-item nav-tabs btn">
                 <a href="#collapseCusines" class="tab-item" role="tab" data-toggle="tab">
-                    Cusions
+                    Cuisines
                 </a>
             </li>
             <li class="nav-item nav-tabs btn">
@@ -507,7 +512,7 @@
             <div class="tab-pane" role="tabpanel" id="collapseCusines">
                 <div class="card card-body">
 
-                    <div class="bg-white restaurantTable p-3">
+                    <div class="bg-white restaurantTable">
                         <table class="mt-3 responsiveTable " style="width: 100%;">
                             <thead>
                                 <tr>
@@ -517,72 +522,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="p-2">55 </td>
-                                    <td>Smith</td>
-                                    <td><i class="fas fa-eye fa-2x btn"></i></td>
-                                </tr>
 
+                                @if (restaurant.Cuisines != null)
+                                {
+                                    @foreach (var cuisine in restaurant.Cuisines)
+                                    {
+                                        <tr>
+                                            <td class="p-2">@cuisine.Id </td>
+                                            <td>@cuisine.Name</td>
+                                            <td><i class="fas fa-eye fa-2x btn"></i></td>
+                                        </tr>
+                                    }
+
+                                }
 
                             </tbody>
                         </table>
@@ -598,107 +550,138 @@
             </div>
             <div class="tab-pane" role="tabpanel" id="collapseOption">
                 <div class="card card-body">
-                    <form action="">
 
-                        <div class="row mt-2 p-2">
+                    <form asp-action="AdminRestaurantUpdate" asp-controller="Restaurant" enctype="multipart/form-data">
+                        <h1 class="mt-4 p-3">Add Restaurant</h1>
+                        <p class="mx-3">Please Fill The Required Form </p> <hr>
+                        <div class="row mt-4">
                             <div class="col-md-6">
                                 <label for="name">Name *</label>
-                                <input type="text" name="" value="@restaurant.Name" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Restaurant Name"><br>
+                                <input type="text" asp-for="Name" value="@restaurant.Name" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Restaurant Name"><br>
                                 <label for="name">Email *</label>
-                                <input type="email" value="@restaurant.Email" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Email">
+                                <input type="email" asp-for="Email" value="@restaurant.Email" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Email">
                             </div>
                             <div class="col-md-6">
                                 <label for="name">Contact Mob *</label>
-                                <input type="number" value="@restaurant.ContactMob" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Contact"><br>
+                                <input type="number" asp-for="ContactMob" value="@restaurant.ContactMob" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Contact"><br>
                                 <label for="name">Contact Tel *</label>
-                                <input type="number" value="@restaurant.ConatctTel" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Telephone">
+                                <input type="number" asp-for="ConatctTel" value="@restaurant.ConatctTel" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Telephone">
                             </div>
-                        </div>
+                        </div><hr class="bg-dark mt-4">
 
                         <div class="row mt-4">
                             <label for="address"> Address *</label><br>
-                            <textarea value="@restaurant.Address"cols="10" style="resize: none; background-color: #FCFBFB; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Address" rows="3"></textarea>
+                        <input asp-for="Address" value="@restaurant.Address"  style="resize: none; background-color: #FCFBFB; height:30px; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Address" />
                             <div class="col-md-6 mt-3">
                                 <label for="name">Province *</label>
-                                <input type="text" value="@restaurant.Provience.Name" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Telephone">
-
+                                <select asp-for="Provience.Id" asp-items="proviences" style="background-color: #FCFBFB;" class="form-select w-50 mt-2 p-2">
+                                    @restaurant.Provience.Name
+                                </select>
                                 <label class="mt-4" for="name">Postal Code *</label>
-                                <input type="number" value="@restaurant.PostalCode" class="form-control mt-2 w-50 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Postal Code">
+                                <input type="number" asp-for="PostalCode" value="@restaurant.PostalCode" class="form-control mt-2 w-50 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Postal Code">
 
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label for="name">City *</label>
-                                <input type="text" value="@restaurant.City.Name" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Telephone">
+                                <select asp-for="City.Id" asp-items="cities" style="background-color: #FCFBFB;" class="form-select w-50 mt-2 p-2" id="">
+                                @restaurant.City.Name
+                                </select>
+                            </div>
+                        </div><hr class="mt-5">
+                        <br><br>
+                            <div class="row">
+                                <label for="address"> Description *</label><br>
+                                <input asp-for="Discription" value="@restaurant.Discription" style="resize: none; background-color: #FCFBFB; height:30px; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Description" />
+                                <label for="" class="mt-4">Select Cuisines</label>
+                                <div class="form-check form-check-inline mx-4 mt-2">
+                                    @for (int i = 0; i < cuisines.Count; i++)
+                                    {
+                                        @if (cuisines[i].IsChecked == true)
+                                        {
+                                            <div class="form-check form-check-inline mx-3 ">
+                                                <input class="form-check-input " id="@cuisines[i].Id" type="checkbox" checked asp-for="@cuisines[i].IsChecked">
+                                                <input type="hidden" asp-for="@cuisines[i].Id" />
+                                                <input type="hidden" asp-for="@cuisines[i].Name" />
+                                                <label class="form-check-label" for="Italian">@cuisines[i].Name</label>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="form-check form-check-inline mx-3 ">
+                                                <input class="form-check-input " id="@cuisines[i].Id" type="checkbox" asp-for="@cuisines[i].IsChecked">
+                                                <input type="hidden" asp-for="@cuisines[i].Id" />
+                                                <input type="hidden" asp-for="@cuisines[i].Name" />
+                                                <label class="form-check-label" for="Italian">@cuisines[i].Name</label>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                                <div class="col-md-6 mt-4">
+                                    <label for="name">Sales Tax *</label>
+                                    <input type="number" asp-for="SalesTax" value="@restaurant.SalesTax" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Sales Tax"><br>
+                                </div>
+                                <div class="col-md-6 mt-4">
+                                    <label for="name">Order Load Time  *</label>
+                                    <input type="number" asp-for="OrderLedTime" value="@restaurant.OrderLedTime" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Order Load Time in Minutes"><br>
+
+                                </div>
 
                             </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6 ">
+                                <label>Reservation *</label>
+                                @foreach (var option in op)
+                                {
+                                    if (restaurant.Reservation == option)
+                                    {
+                                        <div class="form-check mx-3">
+                                            <input class="form-check-input" type="radio" asp-for="Reservation" value="@option" checked name="Reservation">
+                                            <label class="form-check-label" for="Reservation">
+                                                @option
+                                            </label>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="form-check mx-3">
+                                            <input class="form-check-input" type="radio" asp-for="Reservation" value="@option" name="Reservation">
+                                            <label class="form-check-label" for="Reservation">
+                                                @option
+                                            </label>
+                                        </div>
+                                    }
+
+                                }
+                            </div>
+                            <div class="col-md-6">
+                                <label for="name">Percentage Cut Off  *</label>
+                                <input type="number" asp-for="PercentageCutOff" value="@restaurant.PercentageCutOff" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Percentage Cut Off"><br>
+                            </div>
+
                         </div>
-                        <br>
-                        <div class="row">
-                            <label for="address"> Description *</label><br>
-                            <textarea cols="10" style="resize: none; background-color: #FCFBFB; width: 90%;" class="form-control mt-2 p-2 mx-2" required placeholder="Enter Description" rows="3"></textarea>
-                            <label for="" class="mt-4">Select Cusiones</label>
+                        <hr class="mt-4">
+                        <div class="row mt-5">
+                            <div class="col-md-6">
+                                <label for="logo">Logo *</label>
+                                <input type="file" asp-for="Logo" value="@restaurant.Logo" accept="image/*" name="logo" class="form-control mt-2 w-75 p-2" style="background-color: #FCFBFB;" placeholder=" Upload Logo "><br>
 
-                            <div class="form-check form-check-inline mx-4 mt-2">
-                                <input class="form-check-input" type="checkbox" id="" value="Chines">
-                                <label class="form-check-label" for="Chines">Chines</label>
-
-                                <div class="form-check form-check-inline mx-3 ">
-                                    <input class="form-check-input  " type="checkbox" id="" value="Italian">
-                                    <label class="form-check-label" for="Italian">Italian</label>
-                                </div>
-                                <div class="form-check form-check-inline mx-3 ">
-                                    <input class="form-check-input" type="checkbox" id="" value="Russian">
-                                    <label class="form-check-label" for="Russian">Russian</label>
-                                </div>
-                                <div class="form-check form-check-inline mx-3">
-                                    <input class="form-check-input " type="checkbox" id="" value="Desi">
-                                    <label class="form-check-label" for="Desi">Desi</label>
-                                </div>
-                                <div class="form-check form-check-inline mx-3">
-                                    <input class="form-check-input" type="checkbox" id="" value="Junk Food">
-                                    <label class="form-check-label" for="Junk">Junk Food</label>
-                                </div>
-                                <div class="form-check form-check-inline mx-3">
-                                    <input class="form-check-input" type="checkbox" id="" value="Arabian">
-                                    <label class="form-check-label" for="Arabian">Arabian</label>
-                                </div>
-                                <div class="form-check form-check-inline mx-3">
-                                    <input class="form-check-input " type="checkbox" id="" value="Sweet">
-                                    <label class="form-check-label" for="Sweet">Sweet</label>
-                                </div>
                             </div>
-                            <div class="col-md-6 mt-4">
-                                <label for="name">Sales Tax *</label>
-                                <input type="number" value="@restaurant.SalesTax" name="" id="" class="form-control mt-2 w-75 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter Sales Tax"><br>
-                            </div>
-                            <div class="col-md-6 mt-4">
-                                <label for="name">Order Load Time  *</label>
-                                <input type="number" name="" id="" class="form-control w-75 mt-2 p-2" required style="background-color: #FCFBFB;" placeholder=" Enter  Order Load Time in Minutes"><br>
+                            <div class="col-md-6">
+                                <label for="name">Banner *</label>
+                                <input type="file" asp-for="Banner" value="@restaurant.Banner" accept="image/*" name="banner" class="form-control w-75 mt-2 p-2" style="background-color: #FCFBFB;" placeholder="Upload Banner"><br>
 
                             </div>
 
                         </div>
-                        <div class="row">
-                            <label for="" class="mt-3">Reservation *</label>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Yes">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="form-check mx-3">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="No" checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    No
-                                </label>
-                            </div>
-                        </div>
 
+                        <button type="submit" class="myBtn mt-2">Update Restaurant</button>
                         <br><br>
 
                     </form>
-
                 </div>
+
+
+            </div>
             </div>
         </div>
     </div>

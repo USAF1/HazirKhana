@@ -61,7 +61,44 @@ namespace EntityLibrary.RestaurantManagment
         {
             using (ApplictionDb context = new ApplictionDb())
             {
-                return (from Restaurant in context.Restaurants where Restaurant.Id == id select Restaurant).Include(x=>x.Provience).Include(y=>y.City) .FirstOrDefault();
+                return (from Restaurant in context.Restaurants where Restaurant.Id == id select Restaurant).Include(x=>x.Provience).Include(y=>y.City).Include(z=>z.Cuisines) .FirstOrDefault();
+            }
+        }
+
+        public static void RestaurantAdminUpdate(Restaurant entity)
+        {
+            using (ApplictionDb context = new ApplictionDb())
+            {
+                if (entity != null)
+                {
+                    if (entity.Products != null)
+                    {
+                        foreach (var product in entity.Products)
+                        {
+                            context.Entry(product).State = EntityState.Unchanged;
+                        }
+
+                    }
+
+                    if (entity.Cuisines != null)
+                    {
+                        foreach (var cuisine in entity.Cuisines)
+                        {
+                            context.Entry(cuisine).State = EntityState.Unchanged;
+                        }
+                    }
+                    if (entity.City != null)
+                    {
+                        context.Entry(entity.City).State = EntityState.Unchanged;
+                    }
+                    if (entity.Provience != null)
+                    {
+                        context.Entry(entity.Provience).State = EntityState.Unchanged;
+                    }
+
+                    context.Update(entity);
+                    context.SaveChanges();
+                }
             }
         }
 
